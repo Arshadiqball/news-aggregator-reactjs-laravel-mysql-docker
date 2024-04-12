@@ -1,0 +1,38 @@
+@import '../../assets/css/size_definitions.scss';
+
+@font-face {
+  font-family: 'CA Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('webfont/cloudapp_icons.eot'); /* IE9 Compat Modes */
+  src: local('CA Icons'), local('CA Icons'),
+    url('webfont/cloudapp_icons.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('webfont/cloudapp_icons.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('webfont/cloudapp_icons.woff')
+      format('woff'),
+    /* Modern Browsers */ url('webfont/cloudapp_icons.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('webfont/cloudapp_icons.svg#OpenSans')
+      format('svg'); /* Legacy iOS */
+}
+
+.ca_icon {
+  font-family: 'CA Icons';
+  margin-right: 5px;
+  cursor: default;
+
+  &.size1 {
+    font-size: $size1-font;
+  }
+
+  &.size2 {
+    font-size: $size2-font;
+  }
+
+  &.size3 {
+    font-size: $size3-font;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+}

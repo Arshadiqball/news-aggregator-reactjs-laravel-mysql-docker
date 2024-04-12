@@ -1,0 +1,141 @@
+@import './../../assets/css/color_definitions.scss';
+
+#toaster {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 5vh;
+  right: 2vh;
+  pointer-events: none;
+  user-select: none;
+  font-size: 14px;
+  z-index: 16777271;
+  /* maximum safest value as there's no existing standard in assigning z-index to other components including third party
+  ones assuming toasts should be on top of everything else */
+
+  .toaster-inner {
+    display: flex;
+    flex-direction: column;
+
+    &.toast-sort-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .toast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    color: #404040;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1), 2px 0 5px rgba(0, 0, 0, .1);
+    margin-bottom: 10px;
+    min-width: 320px;
+    max-width: 373px;
+    pointer-events: auto;
+    animation: toastSlideIn .3s cubic-bezier(0.5, 0.78, 0.26, 1.51);
+    opacity: 1;
+    flex-basis: unset;
+
+    &.toast-zombie {
+      animation: toastSlideOut 0.3s cubic-bezier(0.81, -0.52, 0.59, 0.67) forwards;
+    }
+
+    &.bg-success, &.bg-info, &.bg-secondary, &.bg-warning, &.bg-danger, &.bg-warning-light {
+      color: #fff;
+    }
+    &.bg-success {
+      background-color: $success-dark;
+    }
+    &.bg-info {
+      background-color: #2186ab;
+    }
+    &.bg-warning {
+      background-color: $neutral-dark;
+    }
+    &.bg-warning-light {
+      background-color: $warning-red-light;
+    }
+    &.bg-danger {
+      background-color: $danger-dark;
+    }
+    &.bg-secondary {
+      background-color: #6c757d;
+    }
+
+    .toast-content {
+      display: flex;
+      align-items: center;
+      margin-left: 17px;
+
+      .toast-icon {
+        padding-right: 0;
+        .ca_headicon {
+          font-size: 20px;
+        }
+        svg {
+          min-width: 14px;
+        }
+      }
+
+      .toast-message {
+        padding: 10px 6px;
+        white-space: pre-line;
+        word-break: break-word;
+      }
+    }
+    .toast-actions {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        .toast-icon, .toast-action {
+          display: flex;
+          align-self: stretch;
+          align-items: center;
+          padding: 6px;
+        }
+        .undo-seprator {
+          height: 20px;
+          border: 1px solid #FFFFFF;
+        }
+        .toast-action {
+          &.undo {
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10.3px;
+          }
+          &:not(.undo) {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.08);
+            
+            &:hover {
+              background: rgba(0, 0, 0, .2);
+            }
+          }
+    
+        }
+    }
+
+  }
+}
+
+@keyframes toastSlideIn {
+  0% {
+    transform: translateX(100%)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
+
+@keyframes toastSlideOut {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(150%)
+  }
+}

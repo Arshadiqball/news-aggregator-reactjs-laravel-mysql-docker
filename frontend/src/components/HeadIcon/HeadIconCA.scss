@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'CA HeadIcons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('webfont/ca_headlineicons.eot'); /* IE9 Compat Modes */
+  src: local('CA Icons'), local('CA Icons'),
+    url('webfont/ca_headlineicons.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('webfont/ca_headlineicons.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('webfont/ca_headlineicons.woff')
+      format('woff'),
+    /* Modern Browsers */ url('webfont/ca_headlineicons.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('webfont/ca_headlineicons.svg#OpenSans')
+      format('svg'); /* Legacy iOS */
+}
+
+.ca_headicon {
+  font-family: 'CA HeadIcons';
+  margin-right: 5px;
+  font-size: 33px;
+  font-weight: 400;
+  position: relative;
+  cursor: default;
+
+  span {
+    font-family: 'CA HeadIcons';
+  }
+}

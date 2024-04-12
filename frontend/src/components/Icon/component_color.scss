@@ -1,0 +1,13 @@
+@import '../../assets/css/color_definitions.scss';
+
+@each $appclass,
+$color in $light-colors {
+  body.app_#{$appclass} .ca_icon {
+    color: $color;
+  }
+}
+
+@each $appclass,
+$color in $dark-colors {
+  
+}

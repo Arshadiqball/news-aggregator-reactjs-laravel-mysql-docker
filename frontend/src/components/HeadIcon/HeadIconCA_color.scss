@@ -1,0 +1,12 @@
+@import '../../assets/css/color_definitions.scss';
+
+@each $appclass, $color in $dark-colors {
+  body.app_#{$appclass} .ca_headicon {
+    color: $color;
+
+    svg, path {
+      fill: $color;
+    }
+  }
+}
+
